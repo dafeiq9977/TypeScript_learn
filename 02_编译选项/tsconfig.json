@@ -1,0 +1,67 @@
+{
+/*
+    tsconfig.json是编译器配置文件，ts编译器可以根据它的信息对代码进行编译
+*/
+    // include指定哪些TS文件需要编译
+    // **表示任意目录
+    // *表示任意文件
+    "include": [
+        "./src/**/*",    // src目录下的任意目录下的任意文件
+    ],
+    // 不需要被编译的那些文件夹里的文件
+    // 默认值：["node_modules", "bower_components", "jspm_packages"]
+    "exclude": [
+        "./src/hello/*"
+    ],
+    // extends：需要继承哪些配置文件
+    // files：直接指定哪些文件需要编译，include设置哪些文件夹下的哪些文件需要编译
+    "compilerOptions": {
+        // target子选项指定TS被编译成的ECMA版本
+        "target": "es5",
+
+        // 指定要使用的模块化的规范
+        // none, commonjs, amd, system, umd, es6, es2015, es2020, esnext
+        "module": "es2015",
+
+        // lib指定项目使用哪些库，通常不自己指定
+            /* "lib": ["dom", "es6"], */
+
+        // outDir：用来指定编译后文件输出目录
+        "outDir": "./dist",
+
+        // outFile：将全局作用域的代码合并到一个文件(仅支持amd和system模块化)
+        // 用的不多
+            /* "outFile": "./dist/app.js", */
+
+        // allowJs：是否对js文件编译，默认是false
+        "allowJs": true,
+
+        // checkJs：是否检查js代码符合TS语法规范，默认是false
+        "checkJs": true,
+
+        // removeComments：是否移除注释，默认false
+        "removeComments": true,
+
+        // noEmit：是否生成编译后的文件，默认是false
+        "noEmit": false,
+
+        // noEmitOnError：当有错误时，是否生成编译后的文件
+        "noEmitOnError": true, // TS有错误不生成文件
+
+        // alwaysStrict：生成的JS代码是否使用严格模式，默认false
+        "alwaysStrict": true,
+
+        // noImplicitAny：是否允许TS代码中隐式的使用any
+        "noImplicitAny": true,
+
+        // noImplicitThis：是否允许this是类型不明确的，默认false
+        "noImplicitThis": true,
+
+        // strictNullChecks：严格检查null空值的情况
+        "strictNullChecks": true,
+
+        // strict：所有严格检查的总开关，如果是true，上面那几个严格检查选项都是true
+        // 建议永远设置为true
+        "strict": true,
+    }
+}
